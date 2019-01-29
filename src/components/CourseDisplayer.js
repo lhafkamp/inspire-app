@@ -9,10 +9,12 @@ class CourseDisplayer extends React.Component {
     super()
     this.state = {
       courses: [],
-      search: []
+      searchFilter: [],
+      categoryFilter: []
     }
 
     this.changeHandler = this.changeHandler.bind(this)
+    this.filters = this.filters.bind(this)
   }
 
   componentDidMount() {
@@ -25,21 +27,41 @@ class CourseDisplayer extends React.Component {
   }
 
   changeHandler(e) {
+    let state = null
+
+    switch(e.target.type) {
+      case 'select-one':
+        state = "categoryFilter"
+        break
+      default:
+        state = "searchFilter"
+    }
+
     this.setState({
-      search: e.target.value
+      [state]: e.target.value
     })
   }
 
-  render() {
-    const { courses, search } = this.state
+  filters() {
+    const { courses, searchFilter, categoryFilter } = this.state
+
+    const filteredByCategory = courses
+      .filter(course => categoryFilter !== 'all' ? course.category.includes(categoryFilter) : course.category)
 
     const filteredBySearch = courses
-      .filter(course => course.name.includes(search) || course.description.includes(search))
+      .filter(course => course.name.includes(searchFilter) || course.description.includes(searchFilter))
 
+    const allFilters = filteredByCategory
+      .filter(course => filteredBySearch.includes(course))
+
+    return allFilters
+  }
+
+  render() {
     return (
       <div>
         <FilterSection onChange={this.changeHandler} />
-        <CourseSection courses={filteredBySearch} />
+        <CourseSection courses={this.filters()} />
       </div>
     )
   }
