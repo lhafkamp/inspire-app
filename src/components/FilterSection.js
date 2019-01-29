@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FilterSection = () => (
+const FilterSection = ({ onChange }) => (
   <div id="filter-section">
-    
+    <input type="text" onChange={onChange} />
   </div>
 )
 
