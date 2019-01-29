@@ -33,10 +33,13 @@ class CourseDisplayer extends React.Component {
   render() {
     const { courses, search } = this.state
 
+    const filteredBySearch = courses
+      .filter(course => course.name.includes(search) || course.description.includes(search))
+
     return (
       <div>
         <FilterSection onChange={this.changeHandler} />
-        <CourseSection courses={courses} />
+        <CourseSection courses={filteredBySearch} />
       </div>
     )
   }
