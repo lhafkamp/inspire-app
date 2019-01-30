@@ -8,4 +8,10 @@
   > div {
     display: flex;
   }
+
+  @media(max-width: 650px) {
+    > div {
+      flex-direction: column;
+    }
+  }
 }
