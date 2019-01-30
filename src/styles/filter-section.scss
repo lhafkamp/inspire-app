@@ -1,5 +1,87 @@
 #filter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 1rem;
   background: $phc;
   width: 16rem;
   height: 50rem;
+
+  h3 {
+    margin-top: .5rem;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+      margin-bottom: .5rem;
+    }
+
+    &:first-of-type {
+      margin-top: 1rem;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+  }
+
+  .search {
+    input {
+      height: 2.5rem;
+      padding: 0 .5rem;
+      border: none;
+    }
+  }
+
+  .categories {
+    position: relative;
+
+    select {
+      appearance: none;
+      border: none;
+      border-radius: 0;
+      padding: 1rem;
+
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2.9rem;
+      right: 1.1rem;
+      border: solid black;
+      border-width: 0 1.5px 1.5px 0;
+      padding: .2rem;
+      transform: rotate(45deg);
+    }
+  }
+
+  .price-range {
+    .noUi-horizontal {
+      margin-top: 2.5rem;
+      width: 12rem;
+      margin-left: .4rem;
+
+      .noUi-handle {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        top: -4px;
+
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+
+      .noUi-connect {
+        background: #78b7d8;
+      }
+    }
+  }
 }
