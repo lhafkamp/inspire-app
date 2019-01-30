@@ -46,7 +46,7 @@
       border: none;
       border-radius: 0;
       padding: 1rem;
-
+      color: $textc;
     }
 
     &::after {
@@ -54,7 +54,7 @@
       position: absolute;
       top: 2.9rem;
       right: 1.1rem;
-      border: solid black;
+      border: solid $textc;
       border-width: 0 1.5px 1.5px 0;
       padding: .2rem;
       transform: rotate(45deg);
@@ -80,7 +80,7 @@
       }
 
       .noUi-connect {
-        background: #78b7d8;
+        background: $lightblue;
       }
     }
   }

@@ -13,8 +13,55 @@
     box-sizing: border-box;
     flex: 1 19rem;
     height: 19rem;
-    background: gray;
+    background: #fff;
+    box-shadow: 1px 1px 4px 1px #ccc;
     margin: .5rem;
-    padding: .5rem;
+    padding: 1rem;
+    position: relative;
+    transition: .3s transform;
+
+    &:hover,
+    &:focus {
+      display: block;
+      transform: scale(1.03);
+    }
+
+    h3 {
+      background: $lightgreen;
+      padding: 1rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      box-sizing: border-box;
+      left: 0;
+      margin: 0;
+    }
+
+    p {
+      margin-top: 4rem;
+    }
+
+    .tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: #fff;
+      padding: .3rem .5rem;
+      margin: 1rem;
+      background: $lightblue;
+    }
+
+    .price-tag {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: .3rem .5rem;
+      margin: 1rem;
+      border: 1px solid #ccc;
+
+      &::before {
+        content: '$';
+      }
+    }
   }
 }

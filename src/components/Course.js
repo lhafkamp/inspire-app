@@ -5,10 +5,10 @@ const Course = ({ courseData }) => {
 
   return (
     <div className="course">
-      <p>{name}</p>
+      <h3>{name}</h3>
       <p>{description}</p>
-      <p>{category}</p>
-      <p>{price}</p>
+      <span className="tag">{category}</span>
+      <span className="price-tag">{price}</span>
     </div>
   )
 }
