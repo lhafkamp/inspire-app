@@ -9,6 +9,11 @@
   padding: 1rem;
   overflow-y: scroll;
 
+  h1 {
+    margin-top: .5rem;
+    margin-left: 1rem;
+  }
+
   .course {
     box-sizing: border-box;
     flex: 1 19rem;

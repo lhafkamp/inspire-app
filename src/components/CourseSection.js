@@ -4,7 +4,8 @@ import Course from './Course'
 
 const CourseSection = ({ courses }) => (
   <div id="course-section">
-    {courses.map(course => <Course courseData={course} key={course.name} />)}
+    {courses.length ? courses
+      .map(course => <Course courseData={course} key={course.name} />) : <h1>No results found</h1>}
   </div>
 )
 
