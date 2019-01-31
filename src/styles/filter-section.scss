@@ -65,18 +65,34 @@
     .noUi-horizontal {
       margin-top: 2.5rem;
       width: 12rem;
-      margin-left: .4rem;
+      box-shadow: none;
+      align-self: center;
+      margin-left: .5rem;
+
+      .noUi-base {
+        background: #fff;
+        border-radius: 4px;
+      }
 
       .noUi-handle {
         width: 1.5rem;
         height: 1.5rem;
         border-radius: 50%;
         top: -4px;
+        box-shadow: none;
 
         &:before,
         &:after {
           display: none;
         }
+
+        .noUi-tooltip {
+          width: auto;
+        }
+      }
+      .noUi-handle-upper .noUi-tooltip {
+        bottom: 24px;
+        left: -30px;
       }
 
       .noUi-connect {
@@ -92,8 +108,6 @@
 
     .price-range {
       .noUi-horizontal {
-        margin-left: -1rem;
-        align-self: center;
         width: 80%;
       }
     }

@@ -5829,16 +5829,9 @@ normalize-url@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
 
-nouislider-react@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/nouislider-react/-/nouislider-react-2.1.2.tgz#01f8d66ca0efb7ec5fe9e59557ef4a699cda523e"
-  dependencies:
-    nouislider "^12.1.0"
-    react "^16.7.0"
-
-nouislider@^12.1.0:
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-12.1.0.tgz#a4416b4b3357e77e52217f8ecf060eb14a855f59"
+nouislider@^9.2.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-9.2.0.tgz#e87c507de2b0b4d075038b5a42547c7dbbebaf69"
 
 npm-bundled@^1.0.1:
   version "1.0.5"
@@ -7121,6 +7114,12 @@ react-dom@^16.7.0:
 react-error-overlay@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.2.tgz#888957b884d4b25b083a82ad550f7aad96585394"
+
+react-nouislider@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-nouislider/-/react-nouislider-2.0.1.tgz#94ba46d78627aa1f168d5744c4e2a89df67ab3d4"
+  dependencies:
+    nouislider "^9.2.0"
 
 react-scripts@2.1.3:
   version "2.1.3"

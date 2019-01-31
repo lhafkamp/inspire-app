@@ -1,8 +1,8 @@
 import React from 'react'
-import Slider from 'nouislider-react'
-import 'nouislider/distribute/nouislider.css'
+import Slider from 'react-nouislider'
+import 'react-nouislider/example/nouislider.css'
 
-const FilterSection = ({ onChange }) => (
+const FilterSection = ({ onChange, range, rangeMax }) => (
   <div id="filter-section">
     <h3>Find your course</h3>
 
@@ -24,8 +24,8 @@ const FilterSection = ({ onChange }) => (
     <div className="price-range">
       <label>Price range</label>
       <Slider 
-        range={{ min: 0, max: 300 }} 
-        start={[0, 300]}
+        range={{ min: 0, max: rangeMax }} 
+        start={[range[0], range[1]]}
         tooltips={true}
         connect
         onChange={onChange} 
