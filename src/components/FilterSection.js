@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from 'react-nouislider'
 import 'react-nouislider/example/nouislider.css'
 
-const FilterSection = ({ onChange, range, rangeMax }) => (
+const FilterSection = ({ onChange, categories, range, rangeMax }) => (
   <div id="filter-section">
     <h3>Find your course</h3>
 
@@ -15,9 +15,7 @@ const FilterSection = ({ onChange, range, rangeMax }) => (
       <label>Categories</label>
       <select onChange={onChange}>
         <option value="all">all categories</option>
-        <option value="calculus">calculus</option>
-        <option value="language">language</option>
-        <option value="history">history</option>
+        {categories.map(category => <option key={category} value={category}>{category}</option>)}
       </select>
     </div>
 

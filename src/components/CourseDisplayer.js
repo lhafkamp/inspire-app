@@ -11,8 +11,9 @@ class CourseDisplayer extends React.Component {
       courses: [],
       searchFilter: [],
       categoryFilter: [],
+      categories: [],
       rangeFilter: [0, 1000],
-      rangeMax: 1000
+      rangeMax: 1000,
     }
 
     this.changeHandler = this.changeHandler.bind(this)
@@ -20,16 +21,21 @@ class CourseDisplayer extends React.Component {
   }
 
   componentDidMount() {
-    const arr = []
-    Object.keys(allCourses).map(key => arr.push(allCourses[key]))
+    const courseArr = []
+    const categoryArr = []
 
-    const priceArr = arr.map(course => course.price)
+    Object.keys(allCourses).map(key => courseArr.push(allCourses[key]))
+
+    const priceArr = courseArr.map(course => course.price)
     const maxPrice = Math.max(...priceArr)
 
+    courseArr.map(course => !categoryArr.includes(course.category) ? categoryArr.push(course.category) : null)
+
     this.setState({
-      courses: arr,
+      courses: courseArr,
+      categories: categoryArr,
       rangeFilter: [0, maxPrice],
-      rangeMax: maxPrice
+      rangeMax: maxPrice,
     })
   }
 
@@ -80,9 +86,10 @@ class CourseDisplayer extends React.Component {
     return (
       <div>
         <FilterSection 
-          onChange={this.changeHandler} 
-          range={this.state.rangeFilter} 
-          rangeMax={this.state.rangeMax} 
+          onChange={this.changeHandler}
+          categories={this.state.categories}
+          range={this.state.rangeFilter}
+          rangeMax={this.state.rangeMax}
         />
         <CourseSection courses={this.filters()} />
       </div>
