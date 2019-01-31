@@ -51,7 +51,7 @@ class CourseDisplayer extends React.Component {
           break
         default:
           state = 'searchFilter'
-          value = e.target.value
+          value = e.target.value.toLowerCase()
       }
     } else {
       state = 'rangeFilter'
@@ -70,7 +70,7 @@ class CourseDisplayer extends React.Component {
       .filter(course => categoryFilter !== 'all' ? course.category.includes(categoryFilter) : course.category)
 
     const filteredBySearch = courses
-      .filter(course => course.name.includes(searchFilter) || course.description.includes(searchFilter))
+      .filter(course => course.name.toLowerCase().includes(searchFilter) || course.description.toLowerCase().includes(searchFilter))
 
     const filteredByRange = courses
       .filter(course => course.price >= rangeFilter[0] && course.price <= rangeFilter[1] ? course.price : null)
