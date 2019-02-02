@@ -27,7 +27,7 @@ class CourseDisplayer extends React.Component {
     Object.keys(allCourses).map(key => courseArr.push(allCourses[key]))
 
     const priceArr = courseArr.map(course => course.price)
-    const maxPrice = Math.max(...priceArr)
+    const maxPrice = Math.round(Math.max(...priceArr))
 
     courseArr.map(course => !categoryArr.includes(course.category) ? categoryArr.push(course.category) : null)
 
